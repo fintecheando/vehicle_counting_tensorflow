@@ -1,14 +1,13 @@
 # Use an official Python runtime as a parent image
 FROM ubuntu:16.04
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 
 #Install Python Dev
-RUN sudo apt-get install python-pip python-dev   # for Python 2.7
+RUN sudo apt-get install -y python-pip python-dev   # for Python 2.7
 #RUN sudo apt-get install python3-pip python3-dev # for Python 3.n
 
 # install dependencies
-RUN sudo apt-get update
 RUN sudo apt-get install -y build-essential
 RUN sudo apt-get install -y cmake
 RUN sudo apt-get install -y libgtk2.0-dev
