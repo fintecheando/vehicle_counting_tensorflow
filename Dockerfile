@@ -43,7 +43,7 @@ RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gs
 #<built-in function SIFT>
 
 #Install TensorFlow
-RUN apt-get remove python-pip
+RUN apt-get remove -y python-pip
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 #RUN python3 get-pip.py
