@@ -64,18 +64,6 @@ RUN pip install lxml
 RUN pip install jupyter
 RUN pip install matplotlib
 
-
-#COCO API installation
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E1DD270288B4E6030699E45FA1715D88E1DF1F24
-RUN echo 'deb http://ppa.launchpad.net/git-core/ppa/ubuntu trusty main' > /etc/apt/sources.list.d/git.list
-
-RUN apt-get update 
-RUN apt-get install -y git
-RUN git clone https://github.com/cocodataset/cocoapi.git
-RUN cd cocoapi/PythonAPI
-RUN make
-RUN cp -r pycocotools <path_to_tensorflow>/models/research/
-
 #Protobuf Compilation
 # From tensorflow/models/research/
 RUN protoc object_detection/protos/*.proto --python_out=.
