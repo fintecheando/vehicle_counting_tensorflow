@@ -80,7 +80,7 @@ RUN mv protoc3/bin/* /usr/local/bin/
 RUN mv protoc3/include/* /usr/local/include/
 
 RUN apt-get update
-RUN apt-get install -y python-tk
+RUN apt-get install -y python-tk python-scipy
 #RUN protoc object_detection/protos/*.proto --python_out=.
 
 #Add Libraries to PYTHONPATH
