@@ -56,7 +56,7 @@ RUN pip install --upgrade pip && pip install --default-timeout=100 tensorflow
 # Python 3.n; GPU support
 #RUN pip3 install tensorflow-gpu 
 
-RUN apt-get install protobuf-compiler python-pil python-lxml python-tk
+#RUN apt-get install protobuf-compiler python-pil python-lxml python-tk
 RUN pip install jupyter
 RUN pip install matplotlib
 RUN pip install pillow
