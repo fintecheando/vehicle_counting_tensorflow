@@ -7,7 +7,7 @@ RUN apt-get upgrade -y
 # for Python 2.7
 #RUN apt-get install -y python-pip python-dev   
 # for Python 3.n
-RUN sudo apt-get install python3-pip python3-dev 
+RUN apt-get install python3-pip python3-dev 
 
 # install dependencies
 RUN apt-get install -y build-essential
