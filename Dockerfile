@@ -43,36 +43,10 @@ RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gs
 #<built-in function SIFT>
 
 #Install TensorFlow
-#RUN pip install tensorflow      # Python 2.7; CPU support (no GPU support)
+RUN pip install tensorflow      # Python 2.7; CPU support (no GPU support)
 #RUN pip3 install tensorflow     # Python 3.n; CPU support (no GPU support)
 # Python 2.7;  GPU support
-RUN export PIP_DEFAULT_TIMEOUT=100 && curl -O https://bootstrap.pypa.io/get-pip.py && \
-    python get-pip.py && \
-    rm get-pip.py
-
-RUN pip --no-cache-dir install --default-timeout=100 \
-        Pillow \
-        h5py \
-        ipykernel \
-        jupyter \
-        matplotlib \
-        numpy \
-        pandas \
-        scipy \
-        sklearn \
-        && \
-    python -m ipykernel.kernelspec
-
-# --- DO NOT EDIT OR DELETE BETWEEN THE LINES --- #
-# These lines will be edited automatically by parameterized_docker_build.sh. #
-# COPY _PIP_FILE_ /
-# RUN pip --no-cache-dir install /_PIP_FILE_
-# RUN rm -f /_PIP_FILE_
-
-# Install TensorFlow CPU version from central repo
-RUN pip --no-cache-dir install --default-timeout=100 \
-    http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0-cp27-none-linux_x86_64.whl
-# --- ~ DO NOT EDIT OR DELETE BETWEEN THE LINES --- #
+#RUN pip install tensorflow-gpu 
 RUN which tensorflow-gpu
 # Python 3.n; GPU support
 #RUN pip3 install tensorflow-gpu 
