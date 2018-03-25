@@ -79,7 +79,8 @@ RUN mv protoc3/bin/* /usr/local/bin/
 # Move protoc3/include to /usr/local/include/
 RUN mv protoc3/include/* /usr/local/include/
 
-RUN apt-get install python3-tk
+RUN apt-get update
+RUN apt-get install -y python-tk
 #RUN protoc object_detection/protos/*.proto --python_out=.
 
 #Add Libraries to PYTHONPATH
