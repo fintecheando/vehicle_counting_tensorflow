@@ -1,5 +1,7 @@
 # Use an official Python runtime as a parent image
-FROM python:2.7-slim
+FROM ubuntu:16.04
+RUN apt-get update
+RUN apt-get upgrade
 
 #Install Python Dev
 RUN sudo apt-get install python-pip python-dev   # for Python 2.7
