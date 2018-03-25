@@ -2,7 +2,8 @@
 FROM python:2.7-slim
 
 #Install Python Dev
-RUN sudo apt-get install python3-pip python3-dev # for Python 3.n
+RUN sudo apt-get install python-pip python-dev   # for Python 2.7
+#RUN sudo apt-get install python3-pip python3-dev # for Python 3.n
 
 # install dependencies
 RUN sudo apt-get update
@@ -36,6 +37,9 @@ RUN sudo make install
 #<built-in function SIFT>
 
 #Install TensorFlow
+#RUN pip install tensorflow      # Python 2.7; CPU support (no GPU support)
+#RUN pip3 install tensorflow     # Python 3.n; CPU support (no GPU support)
+#RUN pip install tensorflow-gpu  # Python 2.7;  GPU support
 # Python 3.n; GPU support
 RUN pip3 install tensorflow-gpu 
 
