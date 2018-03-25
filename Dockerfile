@@ -43,7 +43,7 @@ RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gs
 #<built-in function SIFT>
 
 #Install TensorFlow
-RUN apt-get remove -y python-pip
+RUN apt-get remove -y python-pip 
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 #RUN python3 get-pip.py
@@ -79,6 +79,7 @@ RUN mv protoc3/bin/* /usr/local/bin/
 # Move protoc3/include to /usr/local/include/
 RUN mv protoc3/include/* /usr/local/include/
 
+RUN apt-get install python-tk
 #RUN protoc object_detection/protos/*.proto --python_out=.
 
 #Add Libraries to PYTHONPATH
