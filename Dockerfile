@@ -66,6 +66,7 @@ RUN pip install matplotlib
 
 #Protobuf Compilation
 # From tensorflow/models/research/
+RUN apt-get install -y python-protobuf
 RUN protoc object_detection/protos/*.proto --python_out=.
 
 #Add Libraries to PYTHONPATH
