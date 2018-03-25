@@ -66,6 +66,7 @@ RUN pip install matplotlib
 
 
 #COCO API installation
+RUN apt-get install -y git
 RUN git clone https://github.com/cocodataset/cocoapi.git
 RUN cd cocoapi/PythonAPI
 RUN make
