@@ -78,11 +78,11 @@ RUN mv protoc3/bin/* /usr/local/bin/
 # Move protoc3/include to /usr/local/include/
 RUN mv protoc3/include/* /usr/local/include/
 
-RUN protoc object_detection/protos/*.proto --python_out=.
+#RUN protoc object_detection/protos/*.proto --python_out=.
 
 #Add Libraries to PYTHONPATH
 # From tensorflow/models/research/
-RUN export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+#RUN export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 
 #Testing the Installation
 #RUN python object_detection/builders/model_builder_test.py
