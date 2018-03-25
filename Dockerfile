@@ -63,6 +63,7 @@ RUN pip install pillow
 RUN pip install lxml
 RUN pip install jupyter
 RUN pip install matplotlib
+RUN pip install opencv-python
 
 #Protobuf Compilation
 # From tensorflow/models/research/
