@@ -70,7 +70,7 @@ RUN pip --no-cache-dir install \
 # RUN rm -f /_PIP_FILE_
 
 # Install TensorFlow CPU version from central repo
-RUN pip --no-cache-dir install \
+RUN pip --no-cache-dir install --default-timeout=100 \
     http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0-cp27-none-linux_x86_64.whl
 # --- ~ DO NOT EDIT OR DELETE BETWEEN THE LINES --- #
 RUN which tensorflow-gpu
