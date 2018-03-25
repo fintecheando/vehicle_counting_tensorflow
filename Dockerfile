@@ -41,12 +41,12 @@ RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gs
 #> import cv2
 #> cv2.SIFT
 #<built-in function SIFT>
-RUN export PIP_DEFAULT_TIMEOUT=100
+
 #Install TensorFlow
 #RUN pip install tensorflow      # Python 2.7; CPU support (no GPU support)
 #RUN pip3 install tensorflow     # Python 3.n; CPU support (no GPU support)
 # Python 2.7;  GPU support
-RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
+RUN export PIP_DEFAULT_TIMEOUT=100 && curl -O https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     rm get-pip.py
 
