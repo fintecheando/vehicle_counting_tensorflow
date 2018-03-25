@@ -41,7 +41,6 @@ RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gs
 #> import cv2
 #> cv2.SIFT
 #<built-in function SIFT>
-RUN pip install --upgrade pip
 
 #Install TensorFlow
 #RUN pip install tensorflow      # Python 2.7; CPU support (no GPU support)
