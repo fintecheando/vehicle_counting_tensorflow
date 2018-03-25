@@ -4,8 +4,10 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 #Install Python Dev
-RUN sudo apt-get install -y python-pip python-dev   # for Python 2.7
-#RUN sudo apt-get install python3-pip python3-dev # for Python 3.n
+# for Python 2.7
+RUN sudo apt-get install -y python-pip python-dev   
+# for Python 3.n
+#RUN sudo apt-get install python3-pip python3-dev 
 
 # install dependencies
 RUN sudo apt-get install -y build-essential
