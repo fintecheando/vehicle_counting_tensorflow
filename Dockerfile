@@ -5,9 +5,9 @@ RUN apt-get upgrade -y
 
 #Install Python Dev
 # for Python 2.7
-#RUN apt-get install -y python-pip python-dev   
+RUN apt-get install -y python-pip python-dev   
 # for Python 3.n
-RUN apt-get install -y python3-pip python3-dev 
+#RUN apt-get install -y python3-pip python3-dev 
 
 # install dependencies
 RUN apt-get install -y build-essential
@@ -21,7 +21,7 @@ RUN apt-get install -y libjpeg-dev libpng-dev libtiff-dev libjasper-dev
 RUN apt-get -qq install libopencv-dev build-essential checkinstall cmake pkg-config yasm libjpeg-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev python-dev python-numpy libtbb-dev libqt4-dev libgtk2.0-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils
  
 RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gstreamer1.0-libav libgstreamer1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-good1.0-dev libgstreamer-plugins-base1.0-dev libpython-dev python-numpy libboost-all-dev libcurl4-openssl-dev gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-tools && \
-  wget --quiet https://github.com/Itseez/opencv/archive/2.4.11.zip && \
+  wget --quiet http://downloads.sourceforge.net/project/opencvlibrary/opencv-unix/2.4.11/opencv-2.4.11.zip && \
   unzip 2.4.11.zip && \
   cd opencv-2.4.11/ && \
   mkdir build && cd build && \
@@ -43,9 +43,11 @@ RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gs
 #Install TensorFlow
 #RUN pip install tensorflow      # Python 2.7; CPU support (no GPU support)
 #RUN pip3 install tensorflow     # Python 3.n; CPU support (no GPU support)
-#RUN pip install tensorflow-gpu  # Python 2.7;  GPU support
+# Python 2.7;  GPU support
+RUN pip install tensorflow-gpu  
+RUN which tensorflow-gpu
 # Python 3.n; GPU support
-RUN pip3 install tensorflow-gpu 
+#RUN pip3 install tensorflow-gpu 
 
 RUN apt-get install protobuf-compiler python-pil python-lxml python-tk
 RUN pip install jupyter
@@ -54,6 +56,7 @@ RUN pip install pillow
 RUN pip install lxml
 RUN pip install jupyter
 RUN pip install matplotlib
+
 
 #COCO API installation
 RUN git clone https://github.com/cocodataset/cocoapi.git
