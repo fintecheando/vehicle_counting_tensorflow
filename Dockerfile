@@ -43,8 +43,10 @@ RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gs
 #<built-in function SIFT>
 
 #Install TensorFlow
-RUN pip install --upgrade pip && pip install --default-timeout=100 tensorflow      # Python 2.7; CPU support (no GPU support)
-#RUN pip3 install tensorflow     # Python 3.n; CPU support (no GPU support)
+# Python 2.7; CPU support (no GPU support)
+RUN pip install --upgrade pip && pip install --default-timeout=100 tensorflow 
+# Python 3.n; CPU support (no GPU support)     
+#RUN pip3 install tensorflow     
 # Python 2.7;  GPU support
 #RUN pip install tensorflow-gpu 
 RUN which tensorflow-gpu
