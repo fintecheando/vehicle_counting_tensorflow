@@ -46,6 +46,10 @@ RUN apt-get -qq install libopencv-dev build-essential checkinstall cmake pkg-con
 RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gstreamer1.0-libav libgstreamer1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-good1.0-dev libgstreamer-plugins-base1.0-dev libpython-dev python-numpy libboost-all-dev libcurl4-openssl-dev gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-tools 
 
 RUN apt-get install -y git
+
+RUN pip install numpy
+RUN apt-get install -y qtbase5-dev
+
 # Install OpenCV
 RUN git clone --depth 1 https://github.com/opencv/opencv.git /root/opencv && \
 	cd /root/opencv && \
