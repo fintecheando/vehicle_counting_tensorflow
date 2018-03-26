@@ -58,13 +58,13 @@ RUN pip install --upgrade pip && pip install --default-timeout=100 tensorflow-gp
 #RUN pip3 install tensorflow-gpu 
 
 #RUN apt-get install protobuf-compiler python-pil python-lxml python-tk
-RUN pip install jupyter
-RUN pip install matplotlib
-RUN pip install pillow
-RUN pip install lxml
-RUN pip install jupyter
-RUN pip install matplotlib
-RUN pip install opencv-python
+RUN pip install --default-timeout=100  jupyter
+RUN pip install --default-timeout=100  matplotlib
+RUN pip install --default-timeout=100  pillow
+RUN pip install --default-timeout=100  lxml
+RUN pip install --default-timeout=100  jupyter
+RUN pip install --default-timeout=100  matplotlib
+RUN pip install --default-timeout=100  opencv-python
 
 #Protobuf Compilation
 # From tensorflow/models/research/
@@ -90,8 +90,6 @@ RUN apt-get install -y python-tk python-scipy
 
 #Testing the Installation
 #RUN python object_detection/builders/model_builder_test.py
-
-
 
 # Set the working directory to /app
 WORKDIR /app
