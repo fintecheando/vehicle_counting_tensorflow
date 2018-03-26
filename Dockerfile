@@ -47,7 +47,7 @@ RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gs
 
 RUN apt-get install -y git
 
-RUN pip install numpy
+RUN apt-get install -y python3-dev python3-pip python3-tk python3-lxml python3-six
 RUN apt-get install -y qtbase5-dev
 
 # Install OpenCV
@@ -55,7 +55,7 @@ RUN git clone --depth 1 https://github.com/opencv/opencv.git /root/opencv && \
 	cd /root/opencv && \
 	mkdir build && \
 	cd build && \
-	cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON .. && \
+	cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_NVCUVID=OFF -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON .. && \
 	make -j"$(nproc)"  && \
 	make install && \
 	ldconfig && \
