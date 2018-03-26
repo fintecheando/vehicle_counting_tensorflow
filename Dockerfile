@@ -1,7 +1,28 @@
 # Use an official Python runtime as a parent image
-FROM ubuntu:16.04
+FROM nvidia/cuda:9.0-base-ubuntu16.04
 RUN apt-get update
 RUN apt-get upgrade -y
+
+# Pick up some TF dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential \
+        cuda-command-line-tools-9-0 \
+        cuda-cublas-9-0 \
+        cuda-cufft-9-0 \
+        cuda-curand-9-0 \
+        cuda-cusolver-9-0 \
+        cuda-cusparse-9-0 \
+        curl \
+        libcudnn7=7.0.5.15-1+cuda9.0 \
+        libfreetype6-dev \
+        libpng12-dev \
+        libzmq3-dev \
+        pkg-config \
+        python \
+        python-dev \
+        rsync \
+        software-properties-common \
+        unzip
 
 #Install Python Dev
 # for Python 2.7
