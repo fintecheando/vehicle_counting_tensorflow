@@ -53,18 +53,17 @@ RUN python get-pip.py
 #RUN pip3 install tensorflow     
 # Python 2.7;  GPU support
 RUN pip install --upgrade pip && pip install --default-timeout=100 tensorflow-gpu 
-
 # Python 3.n; GPU support
 #RUN pip3 install tensorflow-gpu 
 
 #RUN apt-get install protobuf-compiler python-pil python-lxml python-tk
-RUN pip install --default-timeout=100  jupyter
-RUN pip install --default-timeout=100  matplotlib
-RUN pip install --default-timeout=100  pillow
-RUN pip install --default-timeout=100  lxml
-RUN pip install --default-timeout=100  jupyter
-RUN pip install --default-timeout=100  matplotlib
-RUN pip install --default-timeout=100  opencv-python
+RUN pip install jupyter
+RUN pip install matplotlib
+RUN pip install pillow
+RUN pip install lxml
+RUN pip install jupyter
+RUN pip install matplotlib
+RUN pip install opencv-python
 
 #Protobuf Compilation
 # From tensorflow/models/research/
