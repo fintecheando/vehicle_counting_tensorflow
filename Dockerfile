@@ -48,11 +48,11 @@ RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 #RUN python3 get-pip.py
 # Python 2.7; CPU support (no GPU support)
-RUN pip install --upgrade pip && pip install --default-timeout=100 tensorflow 
+#RUN pip install --upgrade pip && pip install --default-timeout=100 tensorflow 
 # Python 3.n; CPU support (no GPU support)     
 #RUN pip3 install tensorflow     
 # Python 2.7;  GPU support
-#RUN pip install --upgrade pip && pip install --default-timeout=100 tensorflow-gpu 
+RUN pip install --upgrade pip && pip install --default-timeout=100 tensorflow-gpu 
 # Python 3.n; GPU support
 #RUN pip3 install tensorflow-gpu 
 
