@@ -55,7 +55,6 @@ RUN git clone --depth 1 https://github.com/opencv/opencv.git /root/opencv && \
 	make install && \
 	ldconfig && \
 	echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
- 
 # ignore libdc1394 error http://stackoverflow.com/questions/12689304/ctypes-error-libdc1394-error-failed-to-initialize-libdc1394
  
 #python
