@@ -1,3 +1,8 @@
+#BUILD AND RUN
+$ docker build -t vehicle-detector .
+$ docker run vehicle-detector
+
+
 # VEHICLE DETECTION, TRACKING AND COUNTING
 This project focuses on "Vechicle Detection, Tracking and Counting" by [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection). This project has more than just counting vehicles, here are the additional capabilities of this project;
 
