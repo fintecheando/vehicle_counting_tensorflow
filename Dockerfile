@@ -53,6 +53,7 @@ RUN python get-pip.py
 #RUN pip3 install tensorflow     
 # Python 2.7;  GPU support
 RUN pip install --upgrade pip && pip install --default-timeout=100 tensorflow-gpu 
+
 # Python 3.n; GPU support
 #RUN pip3 install tensorflow-gpu 
 
