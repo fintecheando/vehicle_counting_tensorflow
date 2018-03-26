@@ -52,9 +52,7 @@ RUN apt-get update && apt-get install -y cmake ninja-build wget unzip gcc g++ gs
   ninja install && \
   wget --quiet https://github.com/google/glog/archive/v0.3.3.zip && unzip v0.3.3.zip && \
   cd glog-0.3.3/ && ./configure --prefix=/usr && make install -j8 && \
-  cd / && rm -rf 2.4.11.zip opencv-2.4.11/ glog-0.3.3/ v0.3.3.zip && \
-  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
+  cd / && rm -rf 2.4.11.zip opencv-2.4.11/ glog-0.3.3/ v0.3.3.zip 
  
 # ignore libdc1394 error http://stackoverflow.com/questions/12689304/ctypes-error-libdc1394-error-failed-to-initialize-libdc1394
  
