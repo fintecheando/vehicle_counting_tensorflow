@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM nvidia/cuda:9.0-base-ubuntu16.04
+FROM nvidia/cuda:9.1-cudnn7-devel-ubuntu16.04
 RUN apt-get update
 RUN apt-get upgrade -y
 
