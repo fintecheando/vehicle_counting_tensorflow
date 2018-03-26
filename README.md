@@ -1,4 +1,4 @@
-#BUILD AND RUN
+# BUILD AND RUN
 ```bash
 $ docker build -t vehicle-detector .
 $ docker run vehicle-detector
